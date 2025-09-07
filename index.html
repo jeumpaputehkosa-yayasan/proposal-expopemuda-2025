@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Expo Pemuda 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            border-radius: 9999px;
+            padding: 10px 24px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .modal {
+            display: none;
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            animation: slide-up 0.3s ease-out;
+        }
+        @keyframes slide-up {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .copy-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #16a34a;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .copy-message.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <!-- Modal untuk Draft Email -->
+    <div id="emailModal" class="modal fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-overlay absolute inset-0"></div>
+        <div class="modal-content relative w-full max-w-lg p-6 bg-white rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Draf Email Kemitraan</h3>
+            <p class="text-sm text-gray-600 mb-4">Draf ini dibuat secara otomatis. Silakan salin, tempel, dan edit sesuai kebutuhan Anda.</p>
+            <div id="emailDraftText" class="p-4 bg-gray-100 rounded-lg text-sm text-gray-800"></div>
+            <div class="mt-6 flex justify-end space-x-3">
+                <button onclick="copyToClipboard()" class="btn-primary flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
+                        <path d="M5 4a2 2 0 00-2 2v2a2 2 0 002 2h4a2 2 0 002-2V6a2 2 0 00-2-2H5zm7 2h-1V4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1V6z" />
+                        <path d="M9 13a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" />
+                        <path fill-rule="evenodd" d="M12 11h-2v2h2V11z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M14 13h-2v2h2V13z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M16 13h-2v2h2V13z" clip-rule="evenodd" />
+                    </svg>
+                    Salin Draf
+                </button>
+                <button onclick="closeModal()" class="btn-primary bg-gray-500 hover:bg-gray-600">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notifikasi "Tersalin!" -->
+    <div id="copyMessage" class="copy-message rounded-full text-sm">Tersalin!</div>
+
+    <!-- Halaman Utama -->
+    <div class="container mx-auto">
+        <header class="header-bg text-white text-center py-16 sm:py-24 px-4 rounded-3xl mb-8">
+            <h1 class="text-3xl sm:text-5xl font-bold mb-2">PROPOSAL EXPO SUMPAH PEMUDA 2025</h1>
+            <p class="text-lg sm:text-xl font-light">Yayasan Jeumpa Puteh Kosa</p>
+        </header>
+
+        <main class="space-y-12 px-4 sm:px-0">
+            <!-- Tentang Expo -->
+            <section class="card p-6 sm:p-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Tentang Expo</h2>
+                <p class="text-gray-700 leading-relaxed text-justify">
+                    Proposal interaktif ini dibuat untuk Expo Sumpah Pemuda 2025 yang diselenggarakan oleh Yayasan Jeumpa Puteh Kosa. Expo ini bertujuan untuk memberikan informasi yang menarik dan komprehensif kepada calon mitra dan sponsor.
+                </p>
+            </section>
+
+            <!-- Informasi Yayasan -->
+            <section class="card p-6 sm:p-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Informasi Yayasan</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-lg text-gray-700">Struktur Pengurus</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>**Pendiri:** Ali Mulyagusdin</li>
+                            <li>**Ketua:** Abdi Indra</li>
+                            <li>**Sekretaris:** Fauzan Amelian</li>
+                            <li>**Bendahara:** Mada Philea</li>
+                            <li>**Pengawas:** T. Subhan</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-gray-700">Alamat Yayasan</h3>
+                        <p class="mt-2 text-gray-600">
+                            Jl. Rawasakti barat lorong 9 no. 28 perumnas lingke, Kec. Syiah Kuala Kota Banda Aceh, Provinsi Aceh, Indonesia.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bagian Lainnya (seperti Anggaran, Kemitraan) - Anda bisa tambahkan lebih banyak di sini -->
+            <section class="card p-6 sm:p-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Rancangan Anggaran</h2>
+                <p class="text-gray-700 leading-relaxed text-justify">
+                    Kami telah menyusun rancangan anggaran yang transparan dan terperinci untuk memastikan setiap dukungan yang diberikan digunakan secara efektif. Kami sangat terbuka untuk berdiskusi mengenai alokasi dana dan menyesuaikannya dengan kebutuhan dan preferensi mitra kami. Silakan hubungi kami untuk mendapatkan dokumen lengkap.
+                </p>
+            </section>
+
+            <!-- Bagian Kemitraan -->
+            <section class="card p-6 sm:p-8 flex flex-col items-center text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Kemitraan</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 max-w-md">
+                    Tertarik menjadi mitra atau sponsor? Klik tombol di bawah ini untuk menghasilkan draf email kemitraan.
+                </p>
+                <button onclick="openModal()" class="btn-primary shadow-lg hover:shadow-xl">
+                    Buat Draf Email
+                </button>
+            </section>
+        </main>
+
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Yayasan Jeumpa Puteh Kosa</p>
+        </footer>
+    </div>
+
+    <script>
+        const openModal = () => {
+            document.getElementById('emailModal').classList.remove('hidden');
+            const emailDraft = `Kepada Yth. Bapak/Ibu,
+
+Dengan hormat,
+
+Bersama ini kami Yayasan Jeumpa Puteh Kosa, sebuah organisasi yang bergerak di bidang [tambahkan deskripsi kegiatan yayasan], mengajukan proposal untuk Expo Sumpah Pemuda 2025. Expo ini bertujuan untuk [tambahkan tujuan spesifik expo].
+
+Kami percaya kerja sama dengan [nama perusahaan/organisasi] akan memberikan nilai tambah yang signifikan bagi acara ini. Sebagai mitra, kami menawarkan berbagai paket kemitraan yang dapat disesuaikan.
+
+Lampiran terlampir adalah proposal lengkap kami. Kami sangat menantikan kesempatan untuk berdiskusi lebih lanjut dengan Anda.
+
+Terima kasih atas perhatian dan waktu Bapak/Ibu.
+
+Hormat kami,
+
+Abdi Indra
+Ketua Yayasan Jeumpa Puteh Kosa`;
+            document.getElementById('emailDraftText').innerText = emailDraft;
+        };
+
+        const closeModal = () => {
+            document.getElementById('emailModal').classList.add('hidden');
+        };
+
+        const copyToClipboard = () => {
+            const emailDraftText = document.getElementById('emailDraftText').innerText;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = emailDraftText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Tampilkan pesan "Tersalin!"
+            const message = document.getElementById('copyMessage');
+            message.classList.add('show');
+            setTimeout(() => {
+                message.classList.remove('show');
+            }, 2000);
+        };
+        
+        // Menutup modal ketika overlay diklik
+        document.getElementById('emailModal').addEventListener('click', (event) => {
+            if (event.target.id === 'emailModal' || event.target.classList.contains('modal-overlay')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
