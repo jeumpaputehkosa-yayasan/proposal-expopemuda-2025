@@ -479,6 +479,20 @@ EXPO SUMPAH PEMUDA 2025: Proposal Interaktif Proposal interaktif ini dibuat untu
             const copyEmailBtn = document.getElementById('copyEmailBtn');
             const closeModalBtn = document.getElementById('closeModalBtn');
             const copyMessage = document.getElementById('copyMessage');
+            
+            // New logic to handle closing the modal
+            emailModal.addEventListener('click', (event) => {
+                if (event.target === emailModal) {
+                    emailModal.classList.add('hidden');
+                    copyMessage.classList.add('hidden');
+                }
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                emailModal.classList.add('hidden');
+                copyMessage.classList.add('hidden');
+            });
+
 
             generateEmailBtn.addEventListener('click', async () => {
                 const companyName = companyInput.value.trim() || "Calon Mitra";
@@ -528,11 +542,6 @@ EXPO SUMPAH PEMUDA 2025: Proposal Interaktif Proposal interaktif ini dibuat untu
                     generateEmailBtn.innerHTML = '✨ Buat Draf Email Kemitraan';
                     generateEmailBtn.disabled = false;
                 }
-            });
-
-            closeModalBtn.addEventListener('click', () => {
-                emailModal.classList.add('hidden');
-                copyMessage.classList.add('hidden');
             });
 
             copyEmailBtn.addEventListener('click', () => {
