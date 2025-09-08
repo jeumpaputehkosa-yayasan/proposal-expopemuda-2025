@@ -29,15 +29,6 @@
             height: auto;
             margin-bottom: 1rem;
         }
-        .banner {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-            object-position: center;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-        }
         .proposal-card {
             background-color: #fff;
             border-radius: 12px;
@@ -58,13 +49,14 @@
 </header>
 
 <main class="flex-grow flex flex-col items-center">
-    <!-- Kontainer utama untuk banner dan proposal -->
-    <section class="w-full flex flex-col items-center rounded-b-lg">
-        <!-- Banner untuk kegiatan Expo -->
-        <img src="./Banner Expo.jpg" alt="Banner Expo Sumpah Pemuda 2025" class="banner">
+    <!-- Banner untuk kegiatan Expo -->
+    <section class="w-full">
+        <img src="./Banner Expo.jpg" alt="Banner Expo Sumpah Pemuda 2025" class="w-full h-auto max-h-96 object-cover rounded-b-lg">
+    </section>
 
-        <!-- Kolom Unduh Proposal -->
-        <div class="container proposal-card -mt-16 sm:-mt-24 z-10">
+    <!-- Kolom Unduh Proposal -->
+    <section class="container my-8">
+        <div class="proposal-card">
             <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Unduh Proposal Proyek Kemitraan</h2>
             <p class="text-center text-gray-600 mb-8">
                 Silakan unduh dokumen proposal lengkap kami untuk mengetahui lebih detail mengenai proyek Expo Pemuda 2025.
@@ -72,7 +64,7 @@
 
             <!-- Tautan Unduh Proposal -->
             <div class="text-center">
-                <a href="./PROPOSAL%20PROYEK%20KEMITRAAN%20Expo%20Pemuda.pdf"
+                <a href="./PROPOSAL%20PROYEK%20KEMITRAAN%20Expo%20Pemuda.docx"
                    class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 duration-300">
                     Unduh Proposal
                 </a>
@@ -80,9 +72,10 @@
         </div>
     </section>
 
-    <section class="container mt-8 text-center text-gray-600">
+    <section class="container text-center text-gray-600 mb-8">
+        <hr class="border-t border-gray-300 my-8">
         <p>
-            Yayasan Jeumpa Puteh Kosa beralamat di Jl. Rawasakti barat lorong 9 no. 28, Perumnas Lingke, Kec. Syiah Kuala, Kota Banda Aceh, Provinsi Aceh, Indonesia.
+            Yayasan Jeumpa Puteh Kosa beralamat di Jl. Rawasakti barat lorong IX no. 02, Perumnas Lingke, Kec. Syiah Kuala, Kota Banda Aceh, Provinsi Aceh, Indonesia.
         </p>
     </section>
 </main>
