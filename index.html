@@ -3,227 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposal Expo Pemuda 2025</title>
+    <title>Yayasan Jeumpa Puteh Kosa</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F0F4F8;
-            color: #2D3748;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
         }
         .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .header-bg {
-            background-image: linear-gradient(135deg, #1A237E, #283593, #3F51B5);
-        }
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .header {
+            background-color: #4a5568;
+            color: #fff;
+            padding: 2rem 0;
             text-align: center;
         }
-        .copy-button {
-            transition: all 0.2s;
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
         }
-        .copy-button:hover {
-            transform: translateY(-2px);
+        .proposal-section {
+            background-color: #fff;
+            border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .footer-bg {
-            background-image: linear-gradient(135deg, #2D3748, #4A5568);
+            padding: 2.5rem;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
         }
     </style>
 </head>
-<body class="selection:bg-indigo-300 selection:text-indigo-900">
+<body>
 
-    <!-- Modal untuk Draf Email -->
-    <div id="email-modal" class="modal">
-        <div class="modal-content">
-            <h2 class="text-2xl font-bold mb-4">Draf Email Kemitraan</h2>
-            <p class="text-gray-700 mb-6">Draf ini dibuat secara otomatis. Silakan salin, tempel, dan edit sesuai kebutuhan Anda.</p>
-            <textarea id="email-draft-text" class="w-full h-40 p-4 mb-4 text-sm rounded-lg border-2 border-gray-300 resize-none bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500" readonly>
-Kepada Yth.
-Bapak/Ibu Pimpinan [Nama Perusahaan/Instansi]
-di Tempat
-
-Dengan hormat,
-
-Bersama email ini, kami dari Yayasan Jeumpa Puteh Kosa ingin memperkenalkan diri. Kami adalah sebuah organisasi nirlaba yang berfokus pada pemberdayaan pemuda di Banda Aceh.
-
-Saat ini, kami sedang mempersiapkan sebuah proyek besar bernama "EXPO SUMPAH PEMUDA 2025: MENEBAR HARUM DI KOTA GEMILANG" yang akan diselenggarakan pada 27-28 Oktober 2025 di Lapangan Blang Padang, Banda Aceh. Expo ini bertujuan untuk menjadi platform kolaborasi bagi pemuda, UMKM, dan komunitas untuk menciptakan dampak positif bagi masyarakat.
-
-Kami sangat berharap [Nama Perusahaan/Instansi] dapat menjadi mitra strategis dalam acara ini. Proposal lengkap terlampir dalam email ini. Kami percaya kolaborasi ini tidak hanya akan memberikan manfaat positif bagi komunitas, tetapi juga visibilitas yang signifikan bagi perusahaan Bapak/Ibu.
-
-Besar harapan kami untuk dapat berdiskusi lebih lanjut mengenai peluang kerja sama ini.
-
-Hormat kami,
-Abdi Indra
-Ketua Yayasan Jeumpa Puteh Kosa
-Telp/WA: 081313555666
-Email: jeumpaputehkosa@gmail.com
-            </textarea>
-            <div class="flex justify-center gap-4">
-                <button onclick="copyToClipboard()" class="copy-button bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all">
-                    Salin Draf
-                </button>
-                <button onclick="closeModal()" class="bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-full hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-all">
-                    Tutup
-                </button>
-            </div>
-        </div>
+<header class="header">
+    <div class="container flex flex-col items-center">
+        <img src="https://placehold.co/150x150/e0e0e0/ffffff?text=LOGO" alt="Logo Yayasan Jeumpa Puteh Kosa" class="logo rounded-full border-4 border-white">
+        <h1 class="text-4xl font-bold mt-4">Yayasan Jeumpa Puteh Kosa</h1>
+        <p class="text-lg mt-2">Menebar Harum di Kota Gemilang</p>
     </div>
+</header>
 
-    <!-- Main Content -->
-    <div class="container mx-auto">
-        <!-- Header Section -->
-        <header class="header-bg text-white rounded-xl shadow-lg my-8 p-8 md:p-12 text-center transform transition-transform hover:scale-105 duration-300">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-shadow mb-2">
-                PROPOSAL EXPO SUMPAH PEMUDA 2025
-            </h1>
-            <p class="text-lg md:text-xl font-light text-gray-200 text-shadow">
-                Yayasan Jeumpa Puteh Kosa
-            </p>
-        </header>
+<main>
+    <section class="container proposal-section">
+        <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Unduh Proposal Proyek Kemitraan</h2>
+        <p class="text-center text-gray-600 mb-8">
+            Silakan unduh dokumen proposal lengkap kami untuk mengetahui lebih detail mengenai proyek Expo Pemuda 2025.
+        </p>
 
-        <!-- About Section -->
-        <section id="about" class="bg-white rounded-xl shadow-lg p-8 mb-8 transform transition-transform hover:scale-105 duration-300">
-            <h2 class="text-3xl font-bold mb-4 text-indigo-800">Tentang Expo</h2>
-            <p class="text-gray-700 leading-relaxed text-justify">
-                Proposal interaktif ini dibuat untuk Expo Sumpah Pemuda 2025 yang diselenggarakan oleh Yayasan Jeumpa Puteh Kosa. Expo ini bertujuan untuk memberikan informasi yang menarik dan komprehensif kepada calon mitra dan sponsor.
-                Hari Sumpah Pemuda bukan sekadar momentum sejarah, tetapi juga seruan untuk aksi nyata. Berangkat dari semangat tersebut, Yayasan Jeumpa Puteh Kosa menginisiasi **EXPO SUMPAH PEMUDA 2025**, sebuah platform kolaboratif yang didesain untuk merayakan, menginspirasi, dan memberdayakan pemuda. Proyek ini bertujuan untuk menciptakan dampak positif yang berkelanjutan di Banda Aceh, sesuai dengan filosofi yayasan yang terinspirasi dari bunga Jeumpa Puteh sebagai simbol keharuman, kesucian, dan ketulusan.
-            </p>
-        </section>
-
-        <!-- Visi & Misi Section -->
-        <section id="visi-misi" class="bg-white rounded-xl shadow-lg p-8 mb-8 transform transition-transform hover:scale-105 duration-300">
-            <h2 class="text-3xl font-bold mb-4 text-indigo-800">Visi & Misi</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-indigo-50 p-6 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">Visi</h3>
-                    <p class="text-gray-700">
-                        Menjadi episentrum gerakan pemuda paling berpengaruh di Aceh pada tahun 2025, yang mendorong lahirnya solusi nyata untuk tantangan sosial dan ekonomi.
-                    </p>
-                </div>
-                <div class="bg-indigo-50 p-6 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">Misi</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Menyelenggarakan expo dua hari yang memfasilitasi inspirasi, pemberdayaan, aksi kemanusiaan, dan kolaborasi.</li>
-                        <li>Menghubungkan pemuda kreatif dan wirausahawan dengan mentor, pasar, dan pemangku kebijakan.</li>
-                        <li>Menggalang kontribusi nyata dari pemuda untuk masyarakat melalui aksi donor darah dan kampanye sosial.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section id="cta" class="bg-indigo-600 text-white rounded-xl shadow-lg p-8 mb-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">Mari Berkolaborasi!</h2>
-            <p class="text-gray-100 mb-6 max-w-2xl mx-auto">
-                Tertarik menjadi bagian dari gerakan pemuda ini? Kami mengundang Anda untuk mengunduh proposal lengkap dan bergabung sebagai mitra kami.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="./PROPOSAL%20PROYEK%20KEMITRAAN%20Expo%20Pemuda.docx"
-                   class="bg-white text-indigo-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105 duration-300">
-                    Unduh Proposal
-                </a>
-                <a href="./detail_proyek.html"
-                   class="bg-white text-indigo-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105 duration-300">
-                    Detail Proyek
-                </a>
-                <button onclick="openModal()"
-                        class="bg-indigo-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-900 transition-transform transform hover:scale-105 duration-300">
-                    Draf Email Kemitraan
-                </button>
-            </div>
-        </section>
-
-        <!-- Location & Contact Section -->
-        <section id="kontak" class="bg-white rounded-xl shadow-lg p-8 mb-8 transform transition-transform hover:scale-105 duration-300">
-            <h2 class="text-3xl font-bold mb-4 text-indigo-800">Lokasi & Kontak</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-start">
-                <div>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        <strong class="text-indigo-700">Lokasi:</strong> Lapangan Blang Padang, Banda Aceh<br>
-                        <strong class="text-indigo-700">Waktu:</strong> Senin & Selasa, 27-28 Oktober 2025
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        <strong class="text-indigo-700">Alamat Yayasan:</strong> Jl. Rawasakti barat lorong 9 no. 28 perumnas lingke, Kec. Syiah Kuala, Kota Banda Aceh, Provinsi Aceh, Indonesia.
-                    </p>
-                </div>
-                <div>
-                    <p class="text-gray-700 mb-2">
-                        <strong class="text-indigo-700">Email:</strong> jeumpaputehkosa@gmail.com
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <strong class="text-indigo-700">WhatsApp:</strong> 081313555666 (Abdi Indra)
-                    </p>
-                    <p class="text-gray-700">
-                        <strong class="text-indigo-700">Organisasi:</strong> Yayasan Jeumpa Puteh Kosa
-                    </p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer-bg text-gray-400 py-6 mt-8 text-center">
-        <div class="container mx-auto">
-            <p>&copy; 2025 Yayasan Jeumpa Puteh Kosa. All Rights Reserved.</p>
+        <!-- Tautan Unduh Proposal yang sudah diperbaiki -->
+        <div class="text-center">
+            <a href="./PROPOSAL%20PROYEK%20KEMITRAAN%20Expo%20Pemuda.pdf"
+               class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 duration-300">
+                Unduh Proposal
+            </a>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        function openModal() {
-            const modal = document.getElementById('email-modal');
-            modal.style.display = 'flex';
-        }
+    <section class="container mt-8 text-center text-gray-600">
+        <p>
+            Yayasan Jeumpa Puteh Kosa beralamat di Jl. Rawasakti barat lorong IX no. 02, Perumnas Lingke, Kec. Syiah Kuala, Kota Banda Aceh, Provinsi Aceh, Indonesia.
+        </p>
+    </section>
+</main>
 
-        function closeModal() {
-            const modal = document.getElementById('email-modal');
-            modal.style.display = 'none';
-        }
+<footer class="text-center py-8 text-gray-500 text-sm">
+    &copy; 2025 Yayasan Jeumpa Puteh Kosa. Semua hak cipta dilindungi.
+</footer>
 
-        function copyToClipboard() {
-            const textToCopy = document.getElementById('email-draft-text');
-            textToCopy.select();
-            document.execCommand('copy');
-            
-            const button = document.querySelector('.copy-button');
-            const originalText = button.innerHTML;
-            button.innerHTML = 'Disalin!';
-            button.classList.add('bg-green-600', 'hover:bg-green-700');
-            button.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
-
-            setTimeout(() => {
-                button.innerHTML = originalText;
-                button.classList.remove('bg-green-600', 'hover:bg-green-700');
-                button.classList.add('bg-indigo-600', 'hover:bg-indigo-700');
-            }, 2000);
-        }
-    </script>
 </body>
 </html>
