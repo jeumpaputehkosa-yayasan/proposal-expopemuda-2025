@@ -34,9 +34,17 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 2.5rem;
-            margin-top: -30px;
-            position: relative;
-            z-index: 10;
+            /* Perbaikan: Menghapus properti yang menyebabkan tampilan pop-up */
+            position: static;
+            z-index: auto;
+            margin-top: 20px; /* Memberikan jarak dari banner */
+        }
+        .banner {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            object-position: center;
         }
     </style>
 </head>
@@ -44,13 +52,19 @@
 
 <header class="header">
     <div class="container flex flex-col items-center">
-        <img src="https://placehold.co/150x150/e0e0e0/ffffff?text=LOGO" alt="Logo Yayasan Jeumpa Puteh Kosa" class="logo rounded-full border-4 border-white">
+        <!-- Logo Yayasan Jeumpa Puteh Kosa -->
+        <img src="./Logo Yayasan Jeumpa Puteh Kosa.jpg" alt="Logo Yayasan Jeumpa Puteh Kosa" class="logo rounded-full border-4 border-white">
         <h1 class="text-4xl font-bold mt-4">Yayasan Jeumpa Puteh Kosa</h1>
         <p class="text-lg mt-2">Menebar Harum di Kota Gemilang</p>
     </div>
 </header>
 
 <main>
+    <!-- Banner untuk kegiatan Expo -->
+    <section>
+        <img src="./Banner Expo Pemuda.jpg" alt="Banner Expo Sumpah Pemuda 2025" class="banner">
+    </section>
+
     <section class="container proposal-section">
         <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Unduh Proposal Proyek Kemitraan</h2>
         <p class="text-center text-gray-600 mb-8">
