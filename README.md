@@ -241,7 +241,7 @@ EXPO SUMPAH PEMUDA 2025: Proposal Interaktif Proposal interaktif ini dibuat untu
             document.getElementById('emailModal').classList.remove('hidden');
             const emailDraft = `Assalamu'alaikum Warrahmatullahi Wabarakatuh.
 
-Kepada Yth. Ibu Walikota Banda Aceh,
+Kepada Yth. Bapak Walikota Banda Aceh,
 
 Dengan hormat,
 
@@ -290,3 +290,4 @@ Ketua Yayasan Jeumpa Puteh Kosa`;
     </script>
 </body>
 </html>
+
