@@ -29,26 +29,24 @@
             height: auto;
             margin-bottom: 1rem;
         }
-        .proposal-section {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 2.5rem;
-            /* Perbaikan: Menghapus properti yang menyebabkan tampilan pop-up */
-            position: static;
-            z-index: auto;
-            margin-top: 20px; /* Memberikan jarak dari banner */
-        }
         .banner {
             width: 100%;
             height: auto;
             max-height: 400px;
             object-fit: cover;
             object-position: center;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        .proposal-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
         }
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
 <header class="header">
     <div class="container flex flex-col items-center">
@@ -59,30 +57,32 @@
     </div>
 </header>
 
-<main>
-    <!-- Banner untuk kegiatan Expo -->
-    <section>
-        <img src="./Banner Expo Pemuda.jpg" alt="Banner Expo Sumpah Pemuda 2025" class="banner">
-    </section>
+<main class="flex-grow flex flex-col items-center">
+    <!-- Kontainer utama untuk banner dan proposal -->
+    <section class="w-full flex flex-col items-center rounded-b-lg">
+        <!-- Banner untuk kegiatan Expo -->
+        <img src="./Banner Expo.jpg" alt="Banner Expo Sumpah Pemuda 2025" class="banner">
 
-    <section class="container proposal-section">
-        <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Unduh Proposal Proyek Kemitraan</h2>
-        <p class="text-center text-gray-600 mb-8">
-            Silakan unduh dokumen proposal lengkap kami untuk mengetahui lebih detail mengenai proyek Expo Pemuda 2025.
-        </p>
+        <!-- Kolom Unduh Proposal -->
+        <div class="container proposal-card -mt-16 sm:-mt-24 z-10">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Unduh Proposal Proyek Kemitraan</h2>
+            <p class="text-center text-gray-600 mb-8">
+                Silakan unduh dokumen proposal lengkap kami untuk mengetahui lebih detail mengenai proyek Expo Pemuda 2025.
+            </p>
 
-        <!-- Tautan Unduh Proposal yang sudah diperbaiki -->
-        <div class="text-center">
-            <a href="./PROPOSAL%20PROYEK%20KEMITRAAN%20Expo%20Pemuda.pdf"
-               class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 duration-300">
-                Unduh Proposal
-            </a>
+            <!-- Tautan Unduh Proposal -->
+            <div class="text-center">
+                <a href="./PROPOSAL%20PROYEK%20KEMITRAAN%20Expo%20Pemuda.pdf"
+                   class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 duration-300">
+                    Unduh Proposal
+                </a>
+            </div>
         </div>
     </section>
 
     <section class="container mt-8 text-center text-gray-600">
         <p>
-            Yayasan Jeumpa Puteh Kosa beralamat di Jl. Rawasakti barat lorong IX no. 02, Perumnas Lingke, Kec. Syiah Kuala, Kota Banda Aceh, Provinsi Aceh, Indonesia.
+            Yayasan Jeumpa Puteh Kosa beralamat di Jl. Rawasakti barat lorong 9 no. 28, Perumnas Lingke, Kec. Syiah Kuala, Kota Banda Aceh, Provinsi Aceh, Indonesia.
         </p>
     </section>
 </main>
